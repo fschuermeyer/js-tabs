@@ -1,0 +1,56 @@
+
+$border-color: rgba(0,0,0,0.1);
+$active-color: #5EE86F;
+
+
+.ih-group{
+
+    border: solid 1px $border-color;
+    padding: 20px;
+
+    .ih-tabs-nav{
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li{
+            padding: 10px;
+            border: solid 1px $border-color;
+            margin: 4px;
+            cursor: pointer;
+
+            &:first-child{
+                margin-left: 0;
+            }
+
+            &.active{
+                background: $active-color;
+            }
+        }
+
+    }
+
+    .ih-tabs{
+        article{
+            padding: 10px;
+
+            &:not(.active){
+                position:absolute;
+                opacity: 0;
+                height: 0;
+                font-size: 0;
+                transition: opacity 0.3s linear;
+            }
+
+            &.active{
+                position: static;
+                opacity: 1;
+                transition: opacity 0.3s linear;
+            }
+
+
+
+        }
+    }
+}
